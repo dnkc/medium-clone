@@ -6,6 +6,7 @@ import PortableText from 'react-portable-text'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Head from 'next/head'
 import { useState } from 'react'
+import type { NextPage } from 'next'
 
 interface Props {
   post: Post
@@ -18,7 +19,7 @@ interface IFormInput {
   comment: string
 }
 
-function Post({ post }: Props) {
+const Post: NextPage<Props> = ({ post }) => {
   const [submitted, setSubmitted] = useState(false)
   // console.log(post);
   const {
